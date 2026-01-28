@@ -1,6 +1,6 @@
 # Monitoring Urban Expansion in 6th of October City (2015 - 2025)
 
-## Exam for spatial Ecology in R
+## Exam for ٍSpatial Ecology in R
 
 #### **Supervisor:** Prof. Duccio Rocchini
 
