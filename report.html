@@ -184,22 +184,27 @@ Prof. Duccio Rocchini</h4>
 <p>6th of October City in Egypt has undergone massive urban
 transformations over the last decade. This study aims to utilize Remote
 Sensing techniques to analyze land cover changes, specifically the
-conversion of desert areas into residential and industrial zones. <img
-src="6th-of-october.png" alt="6th of October 2015" /></p>
+conversion of desert areas into residential and industrial zones.</p>
+<p><img src="6th-of-october.png" /></p>
 <p><strong>Data Sources:</strong></p>
 <ul>
-<li><p>Satellite imagery of 6th of October City (October 2015).</p></li>
-<li><p>Satellite imagery of the same area (October 2025 -
-Predicted/Simulated). # Methodology &amp; Tools</p></li>
+<li><strong>Baseline</strong>: Satellite imagery of 6th of October City
+from October 2015.</li>
 </ul>
+<!-- -->
+<ul>
+<li><strong>Comparison</strong>: Satellite imagery of the same area from
+October 2025.</li>
+</ul>
+<h1 id="methodology-tools">Methodology &amp; Tools</h1>
 <p>The analysis was performed using the <code>terra</code> package for
 raster data manipulation, <code>imageRy</code> for image classification,
 and <code>ggplot2</code> for statistical visualization.</p>
 <h3 id="environment-setup-libraries">Environment Setup &amp;
 Libraries</h3>
-<pre><code>library(terra)
-library(imageRy)
-library(ggplot2)</code></pre>
+<pre><code>library(terra) # Data manipulation
+library(imageRy) # Image classification 
+library(ggplot2) # Data visualization</code></pre>
 <h3 id="set-working-directory">Set working directory</h3>
 <pre><code>setwd(&quot;~/Desktop/r-project/&quot;)</code></pre>
 <h3 id="data-import-visual-inspection">Data Import &amp; Visual
@@ -319,5 +324,22 @@ October City, showing a <strong>5.3% increase</strong> in built-up areas
 relative to the total study site over the decade. This data-driven
 approach highlights the speed of development and provides essential
 insights for sustainable urban planning.</p>
+<h1 id="references">References</h1>
+<ul>
+<li><p>European Union, Copernicus Sentinel-2 imagery (2015-2025).
+Retrieved from <a href="https://dataspace.copernicus.eu/">Copernicus
+Data Space Ecosystem</a>.</p></li>
+<li><p><strong>Rocchini, D. (2025)</strong><em>: Educational tools for
+satellite image processing</em>. Developed at the University of
+Bologna.</p></li>
+<li><p><strong>R Core Team (2026).</strong> <em>R: A Language and
+Environment for Statistical Computing</em>. R Foundation for Statistical
+Computing, Vienna, Austria.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Wickham, H. (2016).</strong> <em>ggplot2: Elegant Graphics
+for Data Analysis</em>. Springer-Verlag New York.</li>
+</ul>
 </body>
 </html>
