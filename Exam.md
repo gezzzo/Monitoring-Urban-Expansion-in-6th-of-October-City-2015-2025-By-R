@@ -12,8 +12,6 @@
 
 ![](6th-of-october.png)
 
-To conduct this analysis, multispectral imagery from the **Sentinel-2 mission** was utilized, accessed through the **Copernicus Data Space Ecosystem**. These images provide a high spatial resolution of 10 meters, which is essential for detecting urban sprawl and infrastructure development in arid environments like the 6th of October City. The study employs a multi-temporal approach, comparing data from 2015 and 2025 to quantify the desert-to-urban conversion rate.
-
 **Data Sources:**
 
 -   **Baseline**: Satellite imagery of 6th of October City from October 2015.
