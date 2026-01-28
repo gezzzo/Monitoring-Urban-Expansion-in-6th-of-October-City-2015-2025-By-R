@@ -15,9 +15,6 @@
 **Data Sources:**
 
 -   **Baseline**: Satellite imagery of 6th of October City from October 2015.
-
-<!-- -->
-
 -   **Comparison**: Satellite imagery of the same area from October 2025.
 
 # Methodology & Tools
@@ -35,7 +32,7 @@ library(ggplot2) # Data visualization
 ### Set working directory
 
 ```         
-setwd("~/Desktop/r-project/")
+setwd("~/Desktop/r-project/exam/")
 ```
 
 ### Data Import & Visual Inspection
@@ -66,8 +63,6 @@ par(mfrow=c(1,2))
 plot(m2015c, main="Classes in 2015")
 plot(m2025c, main="Classes in 2025")
 ```
-
-> **Note:** A standardization function (`standardize_map`) was used to ensure consistency across years (e.g., ensuring Class 1 always represents Desert) to allow for accurate change detection.
 
 ![](3fec142c-28f8-43c3-bb80-9a2dd60e4660.png) ![](cfc7182a-3b3b-47e4-a3ef-96a5dcb29ecb.png)
 
@@ -122,6 +117,33 @@ ggplot(data, aes(x=Year, y=Percentage, fill=Class)) +
 By subtracting the 2015 classified map from the 2025 map, we can pinpoint the exact locations where desert was converted into urban land.
 
 ```         
+# Function to make classes consistent: 
+# It ensures Class 1 is always the majority (Desert) and Class 2 is Urban
+standardize_map <- function(classified_img) {
+  freqs <- freq(classified_img)
+  # Find which value (1 or 2) is the majority
+  majority_val <- freqs[which.max(freqs$count), "value"]
+  
+  # If the majority is value 2, we swap 1 and 2
+  if(majority_val == 2) {
+    r_new <- classified_img
+    r_new[classified_img == 1] <- 20 # Temporary value
+    r_new[classified_img == 2] <- 10 # Switch 2 to 10
+    
+    r_final <- r_new
+    r_final[r_new == 10] <- 1 # Set Desert to 1
+    r_final[r_new == 20] <- 2 # Set Urban to 2
+    return(r_final)
+  } else {
+    return(classified_img) # Already correct
+  }
+}
+```
+
+```         
+m2015_fixed <- standardize_map(m2015c)
+m2025_fixed <- standardize_map(m2025c)
+
 # Calculating the difference
 change_map <- m2025_fixed - m2015_fixed
 
@@ -144,7 +166,7 @@ legend("topright",
 
 -   **Light Gray:** Represents areas with no significant land cover change.
 
--   **Red:** Represents loss of urban area ,changing this area,or classification noise.
+-   **Red:** Red pixels may indicate conversion from urban to non-urban, but in practice they often reflect misclassification or local changes in surface reflectance between dates.
 
 # Conclusion
 
@@ -157,7 +179,5 @@ The analysis demonstrates a significant urban sprawl in 6th of October City, sho
 -   **Rocchini, D. (2025)***: Educational tools for satellite image processing*. Developed at the University of Bologna.
 
 -   **R Core Team (2026).** *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienna, Austria.
-
-<!-- -->
 
 -   **Wickham, H. (2016).** *ggplot2: Elegant Graphics for Data Analysis*. Springer-Verlag New York.
