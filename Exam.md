@@ -158,7 +158,7 @@ legend("topright",
        bty    = "o", bg = "white", cex = 1)
 ```
 
-![](Rplot01.png){width="753"}
+![](Rplot01.png)
 
 **Map Interpretation:**
 
