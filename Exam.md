@@ -51,7 +51,7 @@ plot(m2025, main="6th of October - 2025")
 
 # Land Cover Classification
 
-We applied an **Unsupervised Classification** algorithm to categorize the images into two main clusters: **Desert** and **Urban**.
+I applied an **Unsupervised Classification** algorithm to categorize the images into two main clusters: **Desert** and **Urban**.
 
 ```         
 # Classifying images into 2 clusters
@@ -68,7 +68,7 @@ plot(m2025c, main="Classes in 2025")
 
 # Statistical Analysis of Growth
 
-We calculated the frequency of pixels to determine the percentage of land cover for each class.
+I calculated the frequency of pixels to determine the percentage of land cover for each class.
 
 ```         
 # Calculate pixel frequencies and percentages for 2015
@@ -114,7 +114,7 @@ ggplot(data, aes(x=Year, y=Percentage, fill=Class)) +
 
 # Change Detection Map
 
-By subtracting the 2015 classified map from the 2025 map, we can pinpoint the exact locations where desert was converted into urban land.
+By subtracting the 2015 classified map from the 2025 map, we can see the exact locations where desert was converted into urban land.
 
 ```         
 # Function to make classes consistent: 
