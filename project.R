@@ -1,6 +1,6 @@
 # 1. Setup Environment
 # Set the working directory to your project folder
-setwd("~/Desktop/r-project/")
+setwd("~/Desktop/r-project/exam/")
 
 # Load the required libraries
 library(terra)      # For handling spatial data
@@ -101,9 +101,7 @@ change_map <- m2025_fixed - m2015_fixed
 par(mfrow=c(1,1))
 my_colors <- c("red", "gray90", "blue")
 plot(change_map, col=my_colors, legend=FALSE, main="Corrected: 6th of October Urban Growth")
-
-# Add a legend to explain the colors
-legend("topleft", 
-       legend = c("New Urban Areas", "No Change", "Loss/Error"),
+legend("topright",
+       legend = c("New Urban Areas", "No Change", "Loss/Change"),
        fill = c("blue", "gray90", "red"),
-       border = "black", bty = "n", cex = 1.2)
+       bty    = "o", bg = "white", cex = 1)
