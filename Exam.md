@@ -47,7 +47,7 @@ plot(m2015, main="6th of October - 2015")
 plot(m2025, main="6th of October - 2025")
 ```
 
-![](181b797b-d85f-4e16-bd9f-ef57b48aeec3.png){width="699"}
+![](181b797b-d85f-4e16-bd9f-ef57b48aeec3.png)
 
 # Land Cover Classification
 
