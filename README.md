@@ -10,7 +10,7 @@
 
 6th of October City in Egypt has undergone massive urban transformations over the last decade. This study aims to utilize Remote Sensing techniques to analyze land cover changes, specifically the conversion of desert areas into residential and industrial zones.
 
-![](6th-of-october.png)
+![](imgs/6th-of-october.png)
 
 **Data Sources:**
 
@@ -38,8 +38,8 @@ setwd("~/Desktop/r-project/exam/")
 ### Data Import & Visual Inspection
 
 ```         
-m2015 <- rast("oct_2015.jpg")
-m2025 <- rast("oct_2025.jpg")
+m2015 <- rast("data/oct_2015.jpg")
+m2025 <- rast("data/oct_2025.jpg")
 
 # Visual comparison of original images
 par(mfrow=c(1,2))
@@ -47,7 +47,7 @@ plot(m2015, main="6th of October - 2015")
 plot(m2025, main="6th of October - 2025")
 ```
 
-![](181b797b-d85f-4e16-bd9f-ef57b48aeec3.png)
+![](outputs/181b797b-d85f-4e16-bd9f-ef57b48aeec3.png)
 
 # Land Cover Classification
 
@@ -64,7 +64,7 @@ plot(m2015c, main="Classes in 2015")
 plot(m2025c, main="Classes in 2025")
 ```
 
-![](3fec142c-28f8-43c3-bb80-9a2dd60e4660.png) ![](cfc7182a-3b3b-47e4-a3ef-96a5dcb29ecb.png)
+![](outputs/3fec142c-28f8-43c3-bb80-9a2dd60e4660.png) ![](outputs/cfc7182a-3b3b-47e4-a3ef-96a5dcb29ecb.png)
 
 # Statistical Analysis of Growth
 
@@ -110,7 +110,7 @@ ggplot(data, aes(x=Year, y=Percentage, fill=Class)) +
   theme_minimal()
 ```
 
-![](6547dc35-5756-474c-a377-3b0bc0bf8ce7.png)
+![](outputs/6547dc35-5756-474c-a377-3b0bc0bf8ce7.png)
 
 # Change Detection Map
 
@@ -158,7 +158,7 @@ legend("topright",
        bty    = "o", bg = "white", cex = 1)
 ```
 
-![](Rplot01.png)
+![](outputs/Rplot01.png)
 
 **Map Interpretation:**
 
@@ -181,3 +181,7 @@ The analysis demonstrates a significant urban sprawl in 6th of October City, sho
 -   **R Core Team (2026).** *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienna, Austria.
 
 -   **Wickham, H. (2016).** *ggplot2: Elegant Graphics for Data Analysis*. Springer-Verlag New York.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

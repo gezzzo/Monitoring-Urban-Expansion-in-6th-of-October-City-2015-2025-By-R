@@ -9,8 +9,8 @@ library(ggplot2)    # For creating plots
 
 # 2. Import and Visualize Images
 # Import the satellite images for 2015 and 2025
-m2015 <- rast("oct_2015.jpg")
-m2025 <- rast("oct_2025.jpg")
+m2015 <- rast("data/oct_2015.jpg")
+m2025 <- rast("data/oct_2025.jpg")
 
 # Check the properties of the imported data
 m2015
